@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 app.get("/proxy", function (req, res) {
-        const url = req.query.url;
+        const url = decodeURI(req.query.url);
         const method = req.query.method || "GET";
         const contentType = req.query.contenttype;
         const authHeader = req.headers.authorization;
