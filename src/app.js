@@ -11,7 +11,7 @@ app.use(express.json());
 app.get("/proxy", function (req, res) {
         const url = decodeURI(req.query.url);
         const method = req.query.method || "GET";
-        const contentType = req.query.contenttype;
+        const contentType = decodeURI(req.query.contenttype);
         const authHeader = req.headers.authorization;
         const body = req.body;
 
