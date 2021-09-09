@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cors());
 
-app.get("/proxy", function (req, res) {
+app.post("/proxy", function (req, res) {
         const url = decodeURI(req.query.url);
         const method = req.query.method || "GET";
         const contentType = decodeURI(req.query.contenttype);
