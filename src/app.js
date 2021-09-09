@@ -1,12 +1,10 @@
-// import express from 'express';
-// import { axios } from 'axios';
 const express = require("express");
 const axios = require("axios");
-const bodyParser = require('body-parser');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(express.json());
+app.use(cors());
 
 app.get("/proxy", function (req, res) {
         const url = decodeURI(req.query.url);
